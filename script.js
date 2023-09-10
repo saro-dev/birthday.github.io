@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const content = document.getElementById('content');
     const birthdayAudio = document.getElementById('birthdayAudio');
     const videoPlayer = document.getElementById('videoPlayer');
+    const poppingText = document.getElementById('poppingText');
 
     playButton.addEventListener('click', function () {
         // Play the audio
@@ -17,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Hide the black screen and button
         blackScreen.style.display = 'none';
+        setTimeout(function () {
+          poppingText.style.display = 'block';
+      }, 3000); 
     });
 });
 
@@ -67,7 +71,7 @@ Click on Items
 --------------------*/
 $items.forEach((item, i) => {
   item.addEventListener('click', () => {
-    progress = (i/$items.length) * 100 + 10
+    progress = (i/$items.length) * 100 
     animate()
   })
 })
