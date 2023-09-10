@@ -1,0 +1,130 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+body{
+    overflow-x: hidden;
+    font-family: 'Unbounded',sans-serif;
+}
+.video-tag{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+video{
+    width: 300px;
+    height: 400px;
+    margin: 150px auto;
+}
+.image-tag{
+    width: 100%;
+    height: auto;
+    margin: 100px auto;
+    max-width: 100%;
+}
+.image-tag img{
+    width: 100%;
+    padding: 5px;
+}
+.black-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #000; /* Black background color */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.black-screen button {
+    padding: 15px 30px;
+    background-color: #fff; /* White button background color */
+    color: #000; /* Black button text color */
+    border: none;
+    cursor: pointer;
+}
+
+
+.carousel {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .carousel-item {
+    --items: 10;
+    --width: clamp(150px, 30vw, 30px);
+    --height: clamp(200px, 40vw, 400px);
+    --x: calc(var(--active) * 900%);
+    --y: calc(var(--active) * 300%);
+    --rot: calc(var(--active) * 120deg);
+    --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+    overflow: hidden;
+    position: absolute;
+    z-index: var(--zIndex);
+    width: var(--width);
+    height: var(--height);
+    margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    transform-origin: 0% 100%;
+    box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
+    
+    pointer-events: all;
+    transform: translate(var(--x), var(--y)) rotate(var(--rot));
+    transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
+  }
+  .carousel-item .carousel-box {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+    opacity: 1;
+    font-family: "Orelo-sw-db", serif;
+  }
+
+  .carousel-item .carousel-box img {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    object-fit: cover;
+  }
+  .title{
+    font-family: 'Unbounded';
+    font-size: 40px;
+    color: red;
+    text-shadow: 2px 2px 0px #000, 
+      -4px 0 0px #000,
+      7px 4px 0 #fff;
+      letter-spacing: 5px;
+      text-align: center;
+  }
+  
+  .title1{
+    font-family: 'Unbounded';
+    font-size: 20px;
+    color: blue;
+    text-shadow: 1px 1px 0px #dbff11;
+      
+  }
